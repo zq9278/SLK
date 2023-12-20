@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options Connection="1" IsRTTSession="0" IsRTTWithTimeStamp="1" SamplingPeriod="100" SerialNo="0" JTAG_IRPre="-1" JTAG_DRPre="-1" IP="localhost" TargetDevice="STM32G070RB" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ScriptFile Name="D:\project\SLK-01\Software\SLK-01_V1_0\MDK-ARM\SLK-01_V1_0\SLK-01_V1_0.jscope\unspecified" />
+            <ElfFile Name="D:\project\SLK-01\Software\SLK-01_V1_0\MDK-ARM\SLK-01_V1_0\SLK-01_V1_0.axf" />
+            <DataFile Name="" />
+            <RawFile Name="" />
+            <Scope>
+                <Options TimeResolutionUs="500000" />
+            </Scope>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="temp2" Address="0x2000003C" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="1214734448" YAvgSampled="0" Offset="4" ShowInGraph="1" ACCoupling="0" YOffset="360" IsAutoConfig="0" YResolution="1" MaxValue="2000000000" File="../Core/Src/main.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="tempdata" Address="0x20000034" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="-1073667072" YMaxSampled="1073947648" YAvgSampled="1072957112" Offset="8" ShowInGraph="1" ACCoupling="0" YOffset="10" IsAutoConfig="0" YResolution="200000" MaxValue="4200000" File="../Core/Src/main.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="XACTUAL[3]" Address="0x2000002F" Type="uchar" TypeID="6" Size="1" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="0" YMaxSampled="255" YAvgSampled="0" Offset="12" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="1" YResolution="200" MaxValue="400" File="../Core/Src/main.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="XACTUAL[2]" Address="0x2000002E" Type="uchar" TypeID="6" Size="1" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="0" YMaxSampled="255" YAvgSampled="21" Offset="13" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="1" YResolution="200" MaxValue="400" File="../Core/Src/main.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="XACTUAL[1]" Address="0x2000002D" Type="uchar" TypeID="6" Size="1" GraphColorRed="0" GraphColorGreen="191" GraphColorBlue="255" YMinSampled="0" YMaxSampled="255" YAvgSampled="147" Offset="14" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="1" YResolution="200" MaxValue="400" File="../Core/Src/main.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="XACTUAL[0]" Address="0x2000002C" Type="uchar" TypeID="6" Size="1" GraphColorRed="0" GraphColorGreen="100" GraphColorBlue="0" YMinSampled="0" YMaxSampled="255" YAvgSampled="127" Offset="15" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="1" YResolution="200" MaxValue="400" File="../Core/Src/main.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="ForceRawActual" Address="0x20000010" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="100" GraphColorBlue="0" YMinSampled="0" YMaxSampled="509886552" YAvgSampled="0" Offset="16" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="0" YResolution="100000" MaxValue="1000000" File="USER\apply\apply.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="ForceRawSetAct" Address="0x2000001C" Type="int" TypeID="12" Size="4" GraphColorRed="205" GraphColorGreen="133" GraphColorBlue="63" YMinSampled="-2146565888" YMaxSampled="2146107904" YAvgSampled="0" Offset="20" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="1" YResolution="2000000000" MaxValue="-2147483648" File="USER\apply\apply.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="MotorCompareState" Address="0x20000021" Type="uchar" TypeID="6" Size="1" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="0" YMaxSampled="190" YAvgSampled="0" Offset="24" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="1" YResolution="50" MaxValue="417" File="USER\apply\apply.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Motorstate" Address="0x20000020" Type="uchar" TypeID="6" Size="1" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="114" YAvgSampled="0" Offset="25" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="0" YResolution="2" MaxValue="41" File="USER\apply\apply.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>
