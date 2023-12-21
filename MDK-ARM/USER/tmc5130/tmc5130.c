@@ -2,7 +2,7 @@
 #include "delay.h"
 #include "usart.h"
 
-G
+
 
 /*motor*/
 u32 MotorSpeed=0x6000;
@@ -11,7 +11,6 @@ u32 MotorSpeed=0x6000;
 
 extern SPI_HandleTypeDef hspi1;
 u8 tempa[4];
-
 
 
 
@@ -123,7 +122,7 @@ u8 MotorChecking()
 	u8 ReadData[4];
 	
 	TMC_ENN(0);//Êä³öÊ¹ÄÜ
-	TMC5130_Write(0xa7,0x30000);
+	TMC5130_Write(0xa7,0x10000);
 	VelocityModeMove(Negative);
 	do
 	{
