@@ -71,6 +71,7 @@ extern u8 PowerState,LastPowerState;
 1:正在充电
 2:充电已满
 3:未充电。电量充足
+3:未充电量充足
 */
 
 extern u8 Flag_3200ms,Flag_800ms,Flag_400ms,Flag_200ms,Flag_100ms;
