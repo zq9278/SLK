@@ -47,8 +47,8 @@ slk-01_v1_0\stm32g0xx_it.o: ../Drivers/CMSIS/Include/core_cm0plus.h
 slk-01_v1_0\stm32g0xx_it.o: ./USER/led/led.h
 slk-01_v1_0\stm32g0xx_it.o: ./USER/bq25895/bq25895.h
 slk-01_v1_0\stm32g0xx_it.o: ./USER/apply/apply.h
-slk-01_v1_0\stm32g0xx_it.o: .\USER\screen\screen.h
+slk-01_v1_0\stm32g0xx_it.o: ./USER/screen/screen.h
 slk-01_v1_0\stm32g0xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-slk-01_v1_0\stm32g0xx_it.o: .\USER\tmp114\tmp114.h
-slk-01_v1_0\stm32g0xx_it.o: .\USER\pid\pid.h
-slk-01_v1_0\stm32g0xx_it.o: .\USER\heat\heat.h
+slk-01_v1_0\stm32g0xx_it.o: ./USER/tmp114/tmp114.h
+slk-01_v1_0\stm32g0xx_it.o: ./USER/pid/pid.h
+slk-01_v1_0\stm32g0xx_it.o: ./USER/heat/heat.h

@@ -96,6 +96,8 @@ void Error_Handler(void);
 #define LED0_GPIO_Port GPIOC
 #define LED1_Pin GPIO_PIN_7
 #define LED1_GPIO_Port GPIOC
+#define SCREEN_Pin GPIO_PIN_10
+#define SCREEN_GPIO_Port GPIOA
 #define TMC_SDO_Pin GPIO_PIN_11
 #define TMC_SDO_GPIO_Port GPIOA
 #define TMC_SDI_Pin GPIO_PIN_12

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32G070xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32G0xx_HAL_Driver/Inc;../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32G0xx/Include;../Drivers/CMSIS/Include;./USER/delay;./USER/sys;./USER/tmc5130;./USER/hx711;./USER/apply;./USER/bq25895;./USER/led;.\USER\bq27441;.\USER\screen;.\USER\tmp114;.\USER\heat;.\USER\pid;.\USER\24CXX;.\USER\IIC;.\USER\ws2812b</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32G0xx_HAL_Driver/Inc;../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32G0xx/Include;../Drivers/CMSIS/Include;./USER/delay;./USER/sys;./USER/tmc5130;./USER/hx711;./USER/apply;./USER/bq25895;./USER/led;./USER/bq27441;./USER/screen;./USER/tmp114;./USER/heat;./USER/pid;./USER/24CXX;./USER/IIC;./USER/ws2812b</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

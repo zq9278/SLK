@@ -48,8 +48,8 @@ slk-01_v1_0\apply.o: ./USER/tmc5130/tmc5130.h
 slk-01_v1_0\apply.o: ./USER/hx711/hx711.h
 slk-01_v1_0\apply.o: ./USER/delay/delay.h
 slk-01_v1_0\apply.o: ./USER/led/led.h
-slk-01_v1_0\apply.o: .\USER\heat\heat.h
-slk-01_v1_0\apply.o: .\USER\bq27441\bq27441.h
+slk-01_v1_0\apply.o: ./USER/heat/heat.h
+slk-01_v1_0\apply.o: ./USER/bq27441/bq27441.h
 slk-01_v1_0\apply.o: ./USER/bq25895/bq25895.h
-slk-01_v1_0\apply.o: .\USER\screen\screen.h
+slk-01_v1_0\apply.o: ./USER/screen/screen.h
 slk-01_v1_0\apply.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

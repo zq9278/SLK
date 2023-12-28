@@ -45,5 +45,5 @@ slk-01_v1_0\bq27441.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex
 slk-01_v1_0\bq27441.o: ../Drivers/CMSIS/Include/core_cm0plus.h
 slk-01_v1_0\bq27441.o: ../Core/Inc/main.h
 slk-01_v1_0\bq27441.o: ./USER/delay/delay.h
-slk-01_v1_0\bq27441.o: .\USER\24CXX\24cxx.h
-slk-01_v1_0\bq27441.o: .\USER\IIC\myiic.h
+slk-01_v1_0\bq27441.o: ./USER/24CXX/24cxx.h
+slk-01_v1_0\bq27441.o: ./USER/IIC/myiic.h
