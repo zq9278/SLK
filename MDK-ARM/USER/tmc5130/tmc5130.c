@@ -139,7 +139,12 @@ u8 MotorChecking()
 			return 0;
 		}
 	}while((ReadData[3]&0x02)==0x02);
-//	else
+
+	MotorSetHome();
+	TMC5130_Write(0xa0,0x00000000);//位置模式
+	TMC_ENN(1);//输出关闭
+	return 1;
+	//	else
 //	{
 //		VelocityModeMove(DriverID,Positive);
 //		do
@@ -158,10 +163,6 @@ u8 MotorChecking()
 //			}
 //		}while((MotorStatus[3]&0x01)==0x01);
 //	}
-	MotorSetHome();
-	TMC5130_Write(0xa0,0x00000000);//位置模式
-	TMC_ENN(1);//输出关闭
-	return 1;
 }
 
 u8 MotorCompare(s32 SetData,s32 CompareData)

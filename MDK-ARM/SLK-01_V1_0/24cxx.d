@@ -4,7 +4,7 @@ slk-01_v1_0\24cxx.o: ./USER/sys/sys.h
 slk-01_v1_0\24cxx.o: ../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32G0xx.h
 slk-01_v1_0\24cxx.o: ../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g070xx.h
 slk-01_v1_0\24cxx.o: ../Drivers/CMSIS/Include/core_cm0plus.h
-slk-01_v1_0\24cxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+slk-01_v1_0\24cxx.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 slk-01_v1_0\24cxx.o: ../Drivers/CMSIS/Include/cmsis_version.h
 slk-01_v1_0\24cxx.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 slk-01_v1_0\24cxx.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,7 +16,7 @@ slk-01_v1_0\24cxx.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h
 slk-01_v1_0\24cxx.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_def.h
 slk-01_v1_0\24cxx.o: ../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g0xx.h
 slk-01_v1_0\24cxx.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-slk-01_v1_0\24cxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+slk-01_v1_0\24cxx.o: D:\SoftWare\Keil\ARM\ARMCC\Bin\..\include\stddef.h
 slk-01_v1_0\24cxx.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_rcc.h
 slk-01_v1_0\24cxx.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc_ex.h
 slk-01_v1_0\24cxx.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h

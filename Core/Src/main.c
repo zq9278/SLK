@@ -158,7 +158,7 @@ int main(void)
 			{
 				BQ25895_MultiRead(BQ25895Reg);//获取充电芯片状态
 				PowerStateUpdate();//电源状态更新
-//				LEDUpdate();//LED状态更新
+				LEDUpdate();//LED状态更新
 				BQ27441_MultiRead(&BQ27441);//获取电量计数值
 				BATCheckDIS();
 				Flag_800ms=0;
@@ -168,8 +168,8 @@ int main(void)
 			{
 				PWM_WS2812B_Write_24Bits(5,0x0000ff);
 				PWR_STATE=1;
-				TMC5130_Init();
-				MotorChecking();
+				TMC5130_Init();//初始化tmc
+				MotorChecking();//电机自检
 				HX711_Init();
 				HAL_ADC_Start_DMA(&hadc1,(uint32_t *)&ADC_VALUE,3);
 			}
@@ -193,7 +193,7 @@ int main(void)
 			{
 				BQ25895_MultiRead(BQ25895Reg);//获取充电芯片状态
 				PowerStateUpdate();//电源状态更新
-//				LEDUpdate();//LED状态更新
+				LEDUpdate();//LED状态更新
 				BQ27441_MultiRead(&BQ27441);//获取电量计数值
 				BATCheckDIS();
 				Flag_800ms=0;

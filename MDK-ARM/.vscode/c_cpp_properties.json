@@ -23,8 +23,8 @@
                 "d:\\STM32_CODE\\yegong2\\SLK-01_V1_0_231213 (2)\\SLK\\MDK-ARM\\USER\\24CXX",
                 "d:\\STM32_CODE\\yegong2\\SLK-01_V1_0_231213 (2)\\SLK\\MDK-ARM\\USER\\IIC",
                 "d:\\STM32_CODE\\yegong2\\SLK-01_V1_0_231213 (2)\\SLK\\MDK-ARM\\USER\\ws2812b",
-                "C:\\Keil_v5\\ARM\\ARMCC\\include",
-                "C:\\Keil_v5\\ARM\\ARMCC\\include\\rw",
+                "D:\\SoftWare\\Keil\\ARM\\ARMCC\\include",
+                "D:\\SoftWare\\Keil\\ARM\\ARMCC\\include\\rw",
                 "d:\\STM32_CODE\\yegong2\\SLK-01_V1_0_231213 (2)\\SLK\\MDK-ARM",
                 "d:\\STM32_CODE\\yegong2\\SLK-01_V1_0_231213 (2)\\SLK\\Core\\Src",
                 "d:\\STM32_CODE\\yegong2\\SLK-01_V1_0_231213 (2)\\SLK\\Drivers\\STM32G0xx_HAL_Driver\\Src"

@@ -332,18 +332,64 @@ void I2C2_IRQHandler(void)
 void USART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART1_IRQn 0 */
-	u8 Res;
-	if((__HAL_UART_GET_FLAG(&huart1,UART_FLAG_RXNE)!=RESET))  
-	{
-		HAL_UART_Receive(&huart1,&Res,1,1000); 
-		
-		if((USART1_RX_STA&0x8000)==0)//接收未完成
-		{
-			if(USART1_RX_STA&0x4000)//接收到了0x0d
-			{
-				if(USART1_RX_STA&0x2000)
-				{
-//					if((USART1_RX_STA & 0x3fff)==0x05)
+    u8 Res;  // 定义一个8位的变量Res用于存储接收到的数据
+
+    // 检查是否收到数据（接收非空标志位）
+    if((__HAL_UART_GET_FLAG(&huart1,UART_FLAG_RXNE)!=RESET))  
+    {
+        // 从UART接收一个字节的数据到Res，并设置超时时间为1000ms
+        HAL_UART_Receive(&huart1,&Res,1,1000); 
+
+        // 检查接收状态，判断是否接收未完成
+        if((USART1_RX_STA&0x8000)==0)
+        {
+            // 如果接收到了0x0d，即回车键
+            if(USART1_RX_STA&0x4000)
+            {
+                if(USART1_RX_STA&0x2000)
+                {
+                    // 简化的代码，具体的被注释掉的代码块在这里处理特定的情况
+                    
+                        // 将接收到的数据存储到USART1_RX_BUF中，并更新接收状态
+                        USART1_RX_BUF[USART1_RX_STA&0X1FFF]=Res ;
+                        USART1_RX_STA++;
+                        // 如果接收到特定长度的数据，则设置接收完成标志
+                        if((USART1_RX_STA & 0x1fff)==0x07)
+                        {
+                            USART1_RX_STA|=0x8000;
+                        }
+                    
+                }
+                // 特定的情况处理
+                if(Res==0xa5 && USART1_RX_STA==0x4000)
+                {
+                    USART1_RX_STA|=0x2000;
+                }
+            }
+            // 如果接收到特定的起始字节0x5a，并且当前状态为0
+            if(Res==0x5a && USART1_RX_STA==0)
+            {
+                USART1_RX_STA=0x4000;
+            }
+        } 
+    }
+  /* USER CODE END USART1_IRQn 0 */
+  HAL_UART_IRQHandler(&huart1);
+  /* USER CODE BEGIN USART1_IRQn 1 */
+
+    // 检查并清除溢出错误标志位
+    if((__HAL_UART_GET_FLAG(&huart1,UART_FLAG_ORE)!=RESET))
+    {
+        __HAL_UART_CLEAR_OREFLAG(&huart1);
+    }
+    // 检查并清除帧错误标志位
+    if((__HAL_UART_GET_FLAG(&huart1,UART_FLAG_FE)!=RESET))
+    {
+        __HAL_UART_CLEAR_FEFLAG(&huart1);
+    }
+
+
+	//					if((USART1_RX_STA & 0x3fff)==0x05)
 //					{
 //						if(Res==0xaa)
 //						{
@@ -355,37 +401,6 @@ void USART1_IRQHandler(void)
 //						}
 //					}
 //					else
-					{
-						USART1_RX_BUF[USART1_RX_STA&0X1FFF]=Res ;
-						USART1_RX_STA++;
-						if((USART1_RX_STA & 0x1fff)==0x07)
-						{
-							USART1_RX_STA|=0x8000;
-						}
-					}
-				}
-				if(Res==0xa5 && USART1_RX_STA==0x4000)
-				{
-					USART1_RX_STA|=0x2000;
-				}
-			}
-			if(Res==0x5a && USART1_RX_STA==0)
-			{
-				USART1_RX_STA=0x4000;
-			}
-		} 
-	}
-  /* USER CODE END USART1_IRQn 0 */
-  HAL_UART_IRQHandler(&huart1);
-  /* USER CODE BEGIN USART1_IRQn 1 */
-	if((__HAL_UART_GET_FLAG(&huart1,UART_FLAG_ORE)!=RESET))
-	{
-		__HAL_UART_CLEAR_OREFLAG(&huart1);
-	}
-	if((__HAL_UART_GET_FLAG(&huart1,UART_FLAG_FE)!=RESET))
-	{
-		__HAL_UART_CLEAR_FEFLAG(&huart1);
-	}
   /* USER CODE END USART1_IRQn 1 */
 }
 

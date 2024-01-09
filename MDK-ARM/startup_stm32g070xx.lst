@@ -364,11 +364,11 @@ ARM Macro Assembler    Page 6
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0+ --apcs=inter
 work --depend=slk-01_v1_0\startup_stm32g070xx.d -oslk-01_v1_0\startup_stm32g070
-xx.o -I.\RTE\_SLK-01_V1_0 -IC:\Users\zq\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0
-\CMSIS\Core\Include -IC:\Users\zq\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.
-4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include --predefine="__UVISION_VERSION SE
-TA 536" --predefine="_RTE_ SETA 1" --predefine="STM32G070xx SETA 1" --predefine
-="_RTE_ SETA 1" --list=startup_stm32g070xx.lst startup_stm32g070xx.s
+xx.o -I.\RTE\_SLK-01_V1_0 -ID:\SoftWare\Keil\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\I
+nclude -ID:\SoftWare\Keil\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\S
+T\STM32G0xx\Include --predefine="__UVISION_VERSION SETA 536" --predefine="_RTE_
+ SETA 1" --predefine="STM32G070xx SETA 1" --predefine="_RTE_ SETA 1" --list=sta
+rtup_stm32g070xx.lst startup_stm32g070xx.s
 
 
 

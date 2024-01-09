@@ -67,8 +67,8 @@ void MX_USART1_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART1_Init 2 */
-	__HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);
-	__HAL_UART_CLEAR_FLAG(&huart1,UART_FLAG_TC);
+	__HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);//接受缓冲区非�?
+	__HAL_UART_CLEAR_FLAG(&huart1,UART_FLAG_TC);//清除中断完成标志�?
   /* USER CODE END USART1_Init 2 */
 
 }

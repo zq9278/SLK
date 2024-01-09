@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "main.h": "c"
+        "main.h": "c",
+        "delay.h": "c",
+        "tmc5130.h": "c"
     }
 }
