@@ -6,7 +6,7 @@ PID_typedef HeatPID;
 
 void HeatPIDInit(void)
 {
-	HeatPID.target_val=80;
+	HeatPID.target_val=43;
 	HeatPID.actual_val=0; 
 	HeatPID.err=0;
 	HeatPID.err_last=0;

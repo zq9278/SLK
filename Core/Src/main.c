@@ -13,6 +13,7 @@ ddsa
 #include "usart.h"
 #include "gpio.h"
 
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "delay.h"
@@ -28,6 +29,9 @@ ddsa
 #include "pid.h"
 #include "24cxx.h"
 #include "ws2812b.h"
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,6 +59,8 @@ u8 tempbq1[1],tempbq2[1];
 u8 temptmp[2];
 u16 tempadc[9];
 s32 tempdata,tempdata1,temp2;
+s32 ForceRawSetAct_temp;
+s32 ForceRawSetAct_temp2;
 float Force;
 u8 Flag_100ms_Toggle;
 
@@ -62,6 +68,7 @@ extern u32 RGB_DATA;
 
 extern s32 ForceRawOffset;
 extern s32 ForceRawActual;//应变片实际值
+extern s32 ForceRawSetAct;
 extern float EyeTmp;
 extern u8 PWR_STATE;
 extern u8 WorkMode;
@@ -144,6 +151,14 @@ int main(void)
 	PWM_WS2812B_Init();
 	PWM_WS2812B_Show(5);
 	ScreenUpdateSOC(BQ27441.SOC,PowerState);//电量上传
+    PowerState=3;
+   				PWM_WS2812B_Write_24Bits(5,0x0000ff);
+				PWR_STATE=1;
+				TMC5130_Init();//初始化tmc
+				MotorChecking();//电机自检
+				HX711_Init();
+				HAL_ADC_Start_DMA(&hadc1,(uint32_t *)&ADC_VALUE,3);
+                //srand(time(NULL));
 	
   /* USER CODE END 2 */
 
@@ -152,7 +167,7 @@ int main(void)
   while (1)
   {
 		
-		if(PWR_STATE==0)
+		if(PowerState==1)//iic confirms that type_c is charging
 		{
 			if(Flag_800ms)
 			{
@@ -164,17 +179,13 @@ int main(void)
 				Flag_800ms=0;
 			}
 			LEDUpdate();
-			if(PWR_SW==1)
-			{
-				PWM_WS2812B_Write_24Bits(5,0x0000ff);
-				PWR_STATE=1;
-				TMC5130_Init();//初始化tmc
-				MotorChecking();//电机自检
-				HX711_Init();
-				HAL_ADC_Start_DMA(&hadc1,(uint32_t *)&ADC_VALUE,3);
-			}
+            				PWR_STATE=0;
+				HAL_ADC_Stop_DMA(&hadc1);
+				PWM_WS2812B_Write_24Bits(5,0x000000);
+				SystemPowerDown();
+			
 		}
-		else if(PWR_STATE==1)
+		else if(PowerState==3)//iic confirms that type_c is  not charging
 		{
 			LEDUpdate();
 			SW_CMDHandler();
@@ -196,6 +207,12 @@ int main(void)
 				LEDUpdate();//LED状态更新
 				BQ27441_MultiRead(&BQ27441);//获取电量计数值
 				BATCheckDIS();
+                
+                
+                
+                
+                
+                
 				Flag_800ms=0;
 			}
 			if(Flag_100ms)
@@ -206,17 +223,17 @@ int main(void)
 				}
 				if((WorkMode&0x06)==0x06 && Flag_100ms_Toggle==1)
 				{
-					ScreenUpdateForce((ForceRawActual - ForceRawOffset < 0) ? 0 : (ForceRawActual - ForceRawOffset));
+                    ForceRawSetAct_temp=(ForceRawActual - ForceRawOffset < 0) ? 0 : (ForceRawActual - ForceRawOffset);
+                    ForceRawSetAct_temp2=(ForceRawSetAct-37572 < 0) ? 0 : (ForceRawSetAct-37572);
+                    Limit(ForceRawSetAct_temp ,0,ForceRawSetAct_temp2) ;
+                    ScreenUpdateForce(ForceRawSetAct_temp);
 				}
 				Flag_100ms_Toggle=!Flag_100ms_Toggle;
 				Flag_100ms=0;
 			}
 			if(PWR_SW==0)
 			{
-				PWR_STATE=0;
-				HAL_ADC_Stop_DMA(&hadc1);
-				PWM_WS2812B_Write_24Bits(5,0x000000);
-				SystemPowerDown();
+
 			}
 		}
 //		PWM_WS2812B(5,RGB_DATA);

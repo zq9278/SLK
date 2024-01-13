@@ -511,6 +511,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		{
 			LED1Toggle;
 			Flag_800ms=1;
+            Flag_100ms=1;
 			
 			if((WorkMode&0x05)==0x05)
 			{
@@ -529,7 +530,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		}
 		if((Tim7Cnt & 0x01)==0x01)
 		{
-			Flag_100ms=1;
+			//Flag_100ms=1;
 			if((WorkMode&0x05)==0x05)
 			{
 				TMP114_Read(0x00,EyeTmpRaw);
